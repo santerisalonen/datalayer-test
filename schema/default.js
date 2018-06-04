@@ -114,6 +114,49 @@ module.exports = {
       }
     }
   },
+  "/EE_Purchase": {
+    type: "object",
+    properties : {
+      ecommerce : {
+        required : true,
+        type : "object",
+        properties : {
+          purchase : {
+            required : true,
+            type : "object",
+            properties : {
+              actionField : {
+                type : "object",
+                required : true,
+                properties : {
+                  id : {
+                    type : ["string", "number"],
+                    required : true
+                  },
+                  affiliation : {type:"string"},
+                  revenue : {
+                    type: ["string", "number"],
+                    required : true
+                  },
+                  tax : {type: ["string", "number"]},
+                  shipping : {type: ["string", "number"]},
+                  coupon : { type: "string"}
+                }
+              },
+              products : { 
+                required: true,
+                type : "array",
+                minItems : 1,
+                items : {
+                  "$ref": "/EE_Product",
+                }
+              }         
+            }
+          }
+        }
+      }
+    }
+  },
   "/EE_Product" : {
     id : "/EE_Product",
     type : "object",
