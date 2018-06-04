@@ -104,7 +104,6 @@ module.exports = {
                 required: true,
                 type : "array",
                 minItems : 1,
-                maxItems : 1,
                 items : {
                   "$ref": "/EE_Product",
                 }
